@@ -14,6 +14,8 @@ public class SliderViewController: UIViewController {
   private var pageVC: UIPageViewController!
   private var vcs: [ImageViewController] = []
   
+  public var didPageChange: ((Int) -> ())?
+  
   public override func viewDidLoad() {
     super.viewDidLoad()
     setup()
@@ -35,6 +37,7 @@ public class SliderViewController: UIViewController {
         v.trailingAnchor.constraint(equalTo: view.trailingAnchor),
       ])
     }
+    pageVC.delegate = self
     pageVC.dataSource = self
     
     configurePages()
@@ -57,6 +60,32 @@ public class SliderViewController: UIViewController {
   
   public func set(images: [String]) {
     self.images = images
+  }
+  
+  public func setIndex(_ newIndex: Int, animated: Bool = true) {
+    guard newIndex < vcs.count, newIndex >= 0 else { return }
+    guard let currentIndex = currentIndex else {
+      let vc = vcs[newIndex]
+      pageVC.setViewControllers([vc], direction: .forward, animated: false, completion: nil)
+      return
+    }
+    guard newIndex != currentIndex else { return }
+    let direction: UIPageViewController.NavigationDirection
+    if newIndex < currentIndex {
+      direction = .reverse
+    } else {
+      direction = .forward
+    }
+    let vc = vcs[newIndex]
+    pageVC.setViewControllers([vc], direction: direction, animated: animated, completion: nil)
+  }
+  
+  var currentIndex: Int? {
+    guard let vc = pageVC.viewControllers?.first as? ImageViewController,
+          let index = vcs.firstIndex(of: vc) else {
+      return nil
+    }
+    return index
   }
   
 }
@@ -91,4 +120,17 @@ extension SliderViewController: UIPageViewControllerDataSource {
     }
   }
   
+}
+
+extension SliderViewController: UIPageViewControllerDelegate {
+  public func pageViewController(
+    _ pageViewController: UIPageViewController,
+    didFinishAnimating finished: Bool,
+    previousViewControllers: [UIViewController],
+    transitionCompleted completed: Bool
+  ) {
+    guard completed else { return }
+    guard let newIndex = currentIndex else { return }
+    didPageChange?(newIndex)
+  }
 }
