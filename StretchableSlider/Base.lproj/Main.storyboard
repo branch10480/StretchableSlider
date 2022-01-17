@@ -24,7 +24,7 @@
             </objects>
             <point key="canvasLocation" x="-722" y="112"/>
         </scene>
-        <!--View Controller-->
+        <!--Stretchable Slider-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="StretchableSlider" customModuleProvider="target" sceneMemberID="viewController">
@@ -32,23 +32,77 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BoH-z3-Lx4">
-                                <rect key="frame" x="0.0" y="88" width="414" height="300"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="63a-xb-l9D">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ddn-ZH-cTR">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="976"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="uMc-Xy-gW4">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="944"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S7e-IX-4h3">
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="276"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="S7e-IX-4h3" secondAttribute="height" multiplier="3:2" id="fuv-8m-cXZ"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="H3F-Fx-oMY">
+                                                        <rect key="frame" x="0.0" y="276" width="414" height="668"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.
+
+Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.
+
+Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.
+
+Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                                        <color key="textColor" systemColor="labelColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="uMc-Xy-gW4" firstAttribute="leading" secondItem="Ddn-ZH-cTR" secondAttribute="leading" id="ATJ-Jm-xFH"/>
+                                            <constraint firstAttribute="trailing" secondItem="uMc-Xy-gW4" secondAttribute="trailing" id="Fqo-Ws-EeL"/>
+                                            <constraint firstItem="uMc-Xy-gW4" firstAttribute="top" secondItem="Ddn-ZH-cTR" secondAttribute="top" id="MxS-NF-1w0"/>
+                                            <constraint firstAttribute="bottom" secondItem="uMc-Xy-gW4" secondAttribute="bottom" constant="32" id="gy1-WZ-4T0"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BoH-z3-Lx4">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="276"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="S7q-96-wOZ"/>
+                                    <constraint firstItem="Ddn-ZH-cTR" firstAttribute="trailing" secondItem="5eU-Zx-8zO" secondAttribute="trailing" id="8VZ-Cs-9V9"/>
+                                    <constraint firstItem="BoH-z3-Lx4" firstAttribute="leading" secondItem="S7e-IX-4h3" secondAttribute="leading" id="9l4-Hc-0Zd"/>
+                                    <constraint firstItem="BoH-z3-Lx4" firstAttribute="trailing" secondItem="S7e-IX-4h3" secondAttribute="trailing" id="KEq-Je-kIE"/>
+                                    <constraint firstItem="Ddn-ZH-cTR" firstAttribute="bottom" secondItem="5eU-Zx-8zO" secondAttribute="bottom" id="KTG-py-gIP"/>
+                                    <constraint firstItem="Ddn-ZH-cTR" firstAttribute="leading" secondItem="5eU-Zx-8zO" secondAttribute="leading" id="MZc-8C-rpF"/>
+                                    <constraint firstItem="Ddn-ZH-cTR" firstAttribute="width" secondItem="4Hl-jm-cUT" secondAttribute="width" id="N7l-Uk-YgY"/>
+                                    <constraint firstItem="BoH-z3-Lx4" firstAttribute="bottom" secondItem="S7e-IX-4h3" secondAttribute="bottom" id="OZj-0s-387"/>
+                                    <constraint firstItem="Ddn-ZH-cTR" firstAttribute="top" secondItem="5eU-Zx-8zO" secondAttribute="top" id="n4L-PG-09t"/>
                                 </constraints>
-                            </view>
+                                <viewLayoutGuide key="contentLayoutGuide" id="5eU-Zx-8zO"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="4Hl-jm-cUT"/>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BoH-z3-Lx4" secondAttribute="trailing" id="Gmu-jA-EQR"/>
-                            <constraint firstItem="BoH-z3-Lx4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="cYX-7a-ahy"/>
-                            <constraint firstItem="BoH-z3-Lx4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="oz2-ja-FS6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="63a-xb-l9D" secondAttribute="bottom" id="1gv-iL-kD5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="63a-xb-l9D" secondAttribute="trailing" id="B1J-Ex-YR1"/>
+                            <constraint firstItem="BoH-z3-Lx4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" priority="750" id="XJ0-bH-RxK"/>
+                            <constraint firstItem="63a-xb-l9D" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="bgp-r2-caZ"/>
+                            <constraint firstItem="63a-xb-l9D" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="iih-j0-1rZ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="vnJ-Ch-pYw"/>
+                    <navigationItem key="navigationItem" title="Stretchable Slider" id="fA1-iU-GL9"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="sliderArea" destination="BoH-z3-Lx4" id="CMC-UT-iQb"/>
@@ -60,6 +114,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
